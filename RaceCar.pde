@@ -12,7 +12,7 @@ PImage track1;
 
 
 void setup() {
-    fullScreen();
+    size(1920, 1080)
     track1 = loadImage("track1.png");
     textSize(25);
 }
