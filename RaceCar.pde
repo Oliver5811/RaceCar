@@ -2,9 +2,10 @@
 int       populationSize  = 100;    
 
 // Time in frames that the simulation runs for
-int       simulationTime  = 1000;
+int       simulationTime  = 2000;
 
 //Holds all the cars in the simulation
+SensorSystem sensorSystem = new SensorSystem();
 CarSystem carSystem       = new CarSystem(populationSize);
 
 PImage track1;
@@ -27,12 +28,15 @@ void draw() {
 
     if (simulationTime == 0) {
         carSystem.newGeneration();
-        simulationTime = 1000;
+        simulationTime = 2000;
     }
     fill(0);
     text("Generation: " + carSystem.generation, 100, 100);
     text("Population Size: " + carSystem.CarControllerList.size(), 100, 200);
     text("Best Score: " + carSystem.bestScore, 100, 150);
     text("Best Score This Generation: " + carSystem.bestScoreThisGeneration, 100, 250);
+    text("Fastest lap: " + sensorSystem.getFastestLaptimeInFrames, 100, 300);
+    
+    
 
 }

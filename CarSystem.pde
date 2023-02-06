@@ -10,6 +10,8 @@ class CarSystem {
   int generation = 1;
   int bestScore = 0;
   int bestScoreThisGeneration = 0;
+  int time = 0;
+  int fastestTime = 0;
 
   CarSystem(int populationSize) {
     this.populationSize = populationSize;
@@ -31,6 +33,7 @@ class CarSystem {
     //2.) Tegner tilsidst - så sensorer kun ser banen og ikke andre biler!
     for (CarController controller : CarControllerList) {
       controller.display();
+      
       if (controller.sensorSystem.score > bestScoreThisGeneration){
         bestScoreThisGeneration = controller.sensorSystem.score;
       }
@@ -126,5 +129,6 @@ class CarSystem {
     generation++;
 
     bestScoreThisGeneration = 0;
+
   }
 }

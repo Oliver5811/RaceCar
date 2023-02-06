@@ -43,6 +43,7 @@ class SensorSystem {
   boolean lastGreenDetection;
   int     lastTimeInFrames      = 0;
   int     lapTimeInFrames       = 10000;
+  int     fastestLapTimeInFrames = 10000;
   int     score                = 0;
   boolean lastGreen            = true;
 
@@ -131,6 +132,14 @@ class SensorSystem {
       currentGreenDetection = true;
       score++;
       lastGreen = true;
+      lapTimeInFrames = frameCount - lastTimeInFrames; //LAPTIME BEREGNES - frames nu - frames sidst
+      lastTimeInFrames = frameCount;
+      if (lapTimeInFrames<bestLapTimeInFrames) {
+        bestLapTimeInFrames = lapTimeInFrames;
+      }
+    
+     
+
     }
 
     if (lastGreenDetection && !currentGreenDetection) {  //sidst grønt - nu ikke -vi har passeret målstregen 
@@ -178,5 +187,8 @@ class SensorSystem {
     sensorVectorLeftBack.rotate(-sensorAngle);
     sensorVectorRightBack.set(sensorVectorFrontBack);
     sensorVectorRightBack.rotate(sensorAngle);
+  }
+  int getFastestLaptimeInFrames() {
+    return fastestLapTimeInFrames;
   }
 }
