@@ -5,14 +5,13 @@ int       populationSize  = 100;
 int       simulationTime  = 2000;
 
 //Holds all the cars in the simulation
-SensorSystem sensorSystem = new SensorSystem();
 CarSystem carSystem       = new CarSystem(populationSize);
 
 PImage track1;
 
 
 void setup() {
-    size(1920, 1080)
+    size(1920, 1080);
     track1 = loadImage("track1.png");
     textSize(25);
 }
@@ -35,7 +34,7 @@ void draw() {
     text("Population Size: " + carSystem.CarControllerList.size(), 100, 200);
     text("Best Score: " + carSystem.bestScore, 100, 150);
     text("Best Score This Generation: " + carSystem.bestScoreThisGeneration, 100, 250);
-    text("Fastest lap: " + sensorSystem.getFastestLaptimeInFrames, 100, 300);
+    text("Fastest lap: " + carSystem.fastestTime, 100, 300);
     
     
 

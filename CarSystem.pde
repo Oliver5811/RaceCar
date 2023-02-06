@@ -37,7 +37,17 @@ class CarSystem {
       if (controller.sensorSystem.score > bestScoreThisGeneration){
         bestScoreThisGeneration = controller.sensorSystem.score;
       }
+       //get time for fastest car
+      time = controller.sensorSystem.lapTimeInFrames;
+      if (fastestTime == 0){
+        fastestTime = time;
+      } else if (time < fastestTime){
+        fastestTime = time;
+      }
+    
     }
+   
+  
     CarControllerList.removeAll(Dead);
     Dead.clear();
   }

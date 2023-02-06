@@ -46,6 +46,7 @@ class SensorSystem {
   int     fastestLapTimeInFrames = 10000;
   int     score                = 0;
   boolean lastGreen            = true;
+  boolean firstlap = true;
 
   void displaySensors() {
     strokeWeight(0.5);
@@ -134,18 +135,21 @@ class SensorSystem {
       lastGreen = true;
       lapTimeInFrames = frameCount - lastTimeInFrames; //LAPTIME BEREGNES - frames nu - frames sidst
       lastTimeInFrames = frameCount;
-      if (lapTimeInFrames<bestLapTimeInFrames) {
-        bestLapTimeInFrames = lapTimeInFrames;
+      if (score > 3){
+      if (lapTimeInFrames<fastestLapTimeInFrames) {
+        fastestLapTimeInFrames = lapTimeInFrames;
       }
+      }
+     ;
     
      
 
     }
 
-    if (lastGreenDetection && !currentGreenDetection) {  //sidst grønt - nu ikke -vi har passeret målstregen 
-      lapTimeInFrames = frameCount - lastTimeInFrames; //LAPTIME BEREGNES - frames nu - frames sidst
-      lastTimeInFrames = frameCount;
-    }   
+  //  if (lastGreenDetection && !currentGreenDetection) {  //sidst grønt - nu ikke -vi har passeret målstregen 
+    //  lapTimeInFrames = frameCount - lastTimeInFrames; //LAPTIME BEREGNES - frames nu - frames sidst
+      //lastTimeInFrames = frameCount;
+    //}   
     lastGreenDetection = currentGreenDetection; //Husker om der var grønt sidst
     //count clockWiseRotationFrameCounter
     centerToCarVector.set((height/2)-pos.x, (width/2)-pos.y);    
