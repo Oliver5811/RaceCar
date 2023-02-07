@@ -35,6 +35,7 @@ void draw() {
     text("Best Score: " + carSystem.bestScore, 100, 150);
     text("Best Score This Generation: " + carSystem.bestScoreThisGeneration, 100, 250);
     text("Fastest lap: " + carSystem.fastestTime, 100, 300);
+    text("Frames: " + frameCount, 100, 350);
     
     
 

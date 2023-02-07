@@ -41,7 +41,7 @@ class CarSystem {
       time = controller.sensorSystem.lapTimeInFrames;
       if (fastestTime == 0){
         fastestTime = time;
-      } else if (time < fastestTime){
+      } else if (time < fastestTime && controller.sensorSystem.score > 2){
         fastestTime = time;
       }
     
@@ -100,7 +100,7 @@ class CarSystem {
             } else {
               controller.hjerne.weights[j] = weights2[j];
             }
-            controller.hjerne.weights[j] += random(-1, 1);
+            controller.hjerne.weights[j] += random(-0.1, 0.1);
           }
 
           // Mutate the biases
@@ -110,7 +110,7 @@ class CarSystem {
             } else {
               controller.hjerne.biases[j] = biases2[j];
             }
-            controller.hjerne.biases[j] += random(-1, 1);
+            controller.hjerne.biases[j] += random(-0.1, 0.1);
           }
         } else {
           // Copy the weights

@@ -2,7 +2,7 @@ class SensorSystem {
   //SensorSystem - alle bilens sensorer - ogå dem der ikke bruges af "hjernen"
   
   //wall detectors
-  float sensorMag = 100;
+  float sensorMag = 45;
   float sensorAngle = PI*2/8;
   
   PVector anchorPos           = new PVector();
@@ -135,7 +135,7 @@ class SensorSystem {
       lastGreen = true;
       lapTimeInFrames = frameCount - lastTimeInFrames; //LAPTIME BEREGNES - frames nu - frames sidst
       lastTimeInFrames = frameCount;
-      if (score > 3){
+      if (score > 2){
       if (lapTimeInFrames<fastestLapTimeInFrames) {
         fastestLapTimeInFrames = lapTimeInFrames;
       }
@@ -192,7 +192,5 @@ class SensorSystem {
     sensorVectorRightBack.set(sensorVectorFrontBack);
     sensorVectorRightBack.rotate(sensorAngle);
   }
-  int getFastestLaptimeInFrames() {
-    return fastestLapTimeInFrames;
-  }
+
 }
