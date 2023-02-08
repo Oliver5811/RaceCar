@@ -14,6 +14,9 @@ void setup() {
     size(1920, 1080);
     track1 = loadImage("track1.png");
     textSize(25);
+    
+
+
 }
 
 void draw() {
@@ -36,6 +39,7 @@ void draw() {
     text("Best Score This Generation: " + carSystem.bestScoreThisGeneration, 100, 250);
     text("Fastest lap: " + carSystem.fastestTime, 100, 300);
     text("Frames: " + frameCount, 100, 350);
+    text("Current laptime: " + carSystem.time, 100, 400);
     
     
 

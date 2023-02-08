@@ -5,8 +5,9 @@ class CarController {
   NeuralNetwork hjerne       = new NeuralNetwork(varians); 
   SensorSystem  sensorSystem = new SensorSystem();
   boolean isDead             = false;
+
       
-  void update() {
+  void update() {    
     //1.)opdtarer bil 
     bil.update();
     //2.)opdaterer sensorer    

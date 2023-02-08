@@ -55,15 +55,23 @@ class CarSystem {
   void newGeneration(){
 
     // sort by score
+  //  Collections.sort(CarControllerList, new Comparator<CarController>() {
+   //   @Override
+   //   public int compare(CarController o1, CarController o2) {
+   //    return o1.sensorSystem.score - o2.sensorSystem.score;
+    //  }
+   // });
+  // sort by time
     Collections.sort(CarControllerList, new Comparator<CarController>() {
       @Override
       public int compare(CarController o1, CarController o2) {
-        return o1.sensorSystem.score - o2.sensorSystem.score;
+        return o1.sensorSystem.lapTimeInFrames - o2.sensorSystem.lapTimeInFrames;
       }
     });
     
     // reverse list
-    Collections.reverse(CarControllerList);
+   // Collections.reverse(CarControllerList);
+    
 
     // filter out the ones with score 0
     for (int i=0; i<CarControllerList.size(); i++) {
@@ -90,7 +98,7 @@ class CarSystem {
       CarController controller = new CarController();
 
         int mutationRate = (int)random(0, 100);
-        if (mutationRate < 5){
+        if (mutationRate < 85){
           // Mutate the weights
           // Pick a random from 0 to 1
           int number = (int)random(0, 2);
