@@ -9,3 +9,5 @@ Bilernes fitness måles ud fra deres hurtigste laptime. Hvis en bil kører uden 
 
 De to bedste (hurtigste) biler i en generation får deres gener blandet sammen og 100 nye biler dannes. Her muteres 85 % med en meget lav mutationsændring. 
 Dette medfører at langt de fleste biler kører omtrent den samme laptime, men en høj mutationsrate gør at bilerne kan forbedre sig hurtigere.
+
+Alt tid i programmet måles i frames så programmet virker ens på alle computere. Dette gælder både laptimes og længden af en generation som er 2000 frames, så de har noget tid til at køre banen rundt.
