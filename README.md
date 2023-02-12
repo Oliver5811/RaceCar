@@ -1,4 +1,4 @@
-# RaceCar - Theis Østergaard Hove, Oliver Svanholm Kliim og Frederik Benjamin Kliim
+# RaceCar - Theis, Oliver og Frederik
 Banen er bygget op så der er to linjer. Den grønne som er den primære, og den blå som er sekundær. Den grønne er den hvor laptimes måles udfra (bortset 
 fra første omgang rundt), men der skal der dog skiftes mellem at køre over en grøn og blå linje, således at bilerne ikke begynder at køre frem og tilbage 
 over den grønne linje og derfor ikke får kørt en omgang rundt. Der skelnes dog ikke mellem hvilken retning bilerne kører omgangen, da dette ikke blev set
