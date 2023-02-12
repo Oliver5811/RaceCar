@@ -102,7 +102,7 @@ class SensorSystem {
     if (whiteSensorFrameCount>0) {
       fill(whiteSensorFrameCount*10, 0, 0);
     } else {
-      fill(0, clockWiseRotationFrameCounter, 0);
+      fill(0, score * 30, 0);
     }
     ellipse(anchorPos.x, anchorPos.y, 10, 10);
   }

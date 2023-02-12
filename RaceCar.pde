@@ -37,9 +37,11 @@ void draw() {
     text("Population Size: " + carSystem.CarControllerList.size(), 100, 200);
     text("Best Score: " + carSystem.bestScore, 100, 150);
     text("Best Score This Generation: " + carSystem.bestScoreThisGeneration, 100, 250);
-    text("Fastest lap: " + carSystem.fastestTime, 100, 300);
-    text("Frames: " + frameCount, 100, 350);
-    text("Current laptime: " + carSystem.time, 100, 400);
+    text("Frames: " + frameCount, 100, 300);
+  //  text("Current laptime: " + carSystem.time, 100, 400);
+    if (carSystem.generation > 1){
+    text("Fastest lap: " + carSystem.fastestTime, 100, 350);
+    }
     
     
 
